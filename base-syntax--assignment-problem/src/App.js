@@ -16,16 +16,14 @@ class App extends Component {
   }
 
   render() {
-    const inputStyle = {
-      border: '1px solid blue'
-    };
-
     return (
       <div className="App">
         <UserOutput userName={this.state.username} />
-        <UserOutput userName={'user01'} />
-        <UserOutput userName={'user02'} />
-        <UserInput style={inputStyle} changed={this.userNameChangeHandler} userName={this.state.username}/>
+        <UserOutput userName='Jane Doe' />
+        <UserOutput userName={this.state.username} />
+        <UserInput  
+          changed={this.userNameChangeHandler} 
+          userName={this.state.username}/>
         <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>UserInput should hold an input element, UserOutput two paragraphs</li>
