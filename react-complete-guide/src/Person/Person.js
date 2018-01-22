@@ -1,8 +1,9 @@
 import React from 'react';
+import './Person.css';
 
 const person = (props) => {
   return (
-    <div>
+    <div className="Person">
       {/* Using props */}
       <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
       {/* get access to something between oppening and closing tags */}
