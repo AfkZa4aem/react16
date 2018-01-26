@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
+import Validation from './Validation/Validation';
+import Char from './Char/Char'
 
 class App extends Component {
+
+  state = {
+    length: null,
+    string: ''
+  };
+
+  inputChangeHandler = (event) => {
+    this.setState({
+      length: event.target.value.length,
+      string: event.target.value
+    })
+  };
+
   render() {
     return (
       <div className="App">
+
+        <input type='text' onChange={this.inputChangeHandler} value={this.state.string}/>
+
+        <p>{this.state.length}</p>
+        <Validation length={this.state.length}/>
+        <Char string={this.state.string}/>
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
           <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
