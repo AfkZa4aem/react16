@@ -18,6 +18,11 @@ class App extends Component {
   };
 
   render() {
+
+    const charList = this.state.string.split('').map((letter, i) => {
+      return <Char key={i} character={letter} />;
+    });
+
     return (
       <div className="App">
 
@@ -25,7 +30,7 @@ class App extends Component {
 
         <p>{this.state.length}</p>
         <Validation length={this.state.length}/>
-        <Char string={this.state.string}/>
+        {charList}
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
           <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
