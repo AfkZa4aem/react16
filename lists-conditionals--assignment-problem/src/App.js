@@ -17,17 +17,31 @@ class App extends Component {
     })
   };
 
-  render() {
+  deleteCharHandler = (charIndex) => {
+    // create array from string
+    const char = this.state.string.split('');
+    // remove element with index = charIndex
+    char.splice(charIndex, 1);
+    // join to new string
+    const newString = char.join('');
+    // set state equal to new string
+    this.setState({string: newString});
+  }
 
+  render() {
+    // create array from user input and create components
     const charList = this.state.string.split('').map((letter, i) => {
-      return <Char key={i} character={letter} />;
+      // pass inde as key, character as single letter and delete function
+      return <Char key={i} character={letter} clicked={() => this.deleteCharHandler(i)}/>;
     });
 
     return (
       <div className="App">
-
-        <input type='text' onChange={this.inputChangeHandler} value={this.state.string}/>
-
+        <input 
+          type='text' 
+          onChange={this.inputChangeHandler} 
+          value={this.state.string}/>
+        <p>{this.state.string}</p>
         <p>{this.state.length}</p>
         <Validation length={this.state.length}/>
         {charList}
