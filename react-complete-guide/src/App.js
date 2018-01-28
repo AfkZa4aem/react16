@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
+import Radium from 'radium';
 
 class App extends Component {
   state = {
@@ -61,7 +62,12 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      // add pseudo selector using Radium
+      ':hover': {
+          background: 'lightgreen',
+          color: 'black'
+      }
     };
     
     let persons = null;
@@ -83,6 +89,11 @@ class App extends Component {
       );
       // when person list is visible, apply red background
       style.background = 'red';
+      // add pseudo selector using Radium syntax
+      style[':hover'] = {
+        background: 'salmon',
+        color: 'black'
+    }
     }
 
     const classes = [];
@@ -109,4 +120,6 @@ class App extends Component {
   }
 }
 
-export default App;
+// using radium as heigher order component
+// injecting some extra functionality
+export default Radium(App);
