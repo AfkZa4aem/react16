@@ -56,7 +56,8 @@ class App extends Component {
   render() {
 
     const style = {
-      background: 'white',
+      background: 'green',
+      color: '#fff',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -80,6 +81,8 @@ class App extends Component {
           })}
         </div>
       );
+      // when person list is visible, apply red background
+      style.background = 'red';
     }
 
     return (
