@@ -9,3 +9,26 @@
 .bold {
   font-weight: bold;
 }
+
+.App button {
+  border: 1px solid blue;
+  padding: 16px;
+  background: green;
+  font: inherit;
+  color: #fff;
+  cursor: pointer;
+}
+
+.App button:hover {
+  background: lightgreen;
+  color: #000;
+}
+
+.App button.Red {
+  background: red;
+}
+
+.App button.Red:hover {
+  background: lightcoral;
+  color: #000;
+}
